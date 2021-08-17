@@ -1,0 +1,26 @@
+**************************************************
+AVA: cursos.alura.com.br
+Formação: Angular (Nova Formação de Maio/2021)
+Curso: Angular: Avançando com testes automatizados
+Data Início: 17/08/2021
+**************************************************
+
+Capítulo 01: Novo componente, nova complexidade
+
+1. Baixamos, descompactamos e instalamos o projeto disponibilizado em: 
+        @see https://codeload.github.com/alura-cursos/ng-test2/zip/833376983b080185530ec627ced462937c90e0f5
+2. Criamos um novo componente "photo-frame" e seu respectivo módulo, exportando-o:
+        >ng generate module shared/components/photo-frame
+        >ng generate component shared/components/photo-frame
+3. Como o componente "photo-frame" irá utilizar o componente "like-widget", então, precisamos importar seu módulo 
+   para o módulo do photo-frame:
+        @see src\app\shared\components\photo-frame\photo-frame.module.ts
+4. Por enquanto, vamos utilizar o "photo-frame" no componente principal da aplicação, então, precisamos importar
+   seu módulo no módulo principal da aplicação:
+        @see src\app\app.module.ts
+5. Modificamos o componente "photo-frame" para suportar o padrão de projeto "debounce":
+        @see src\app\shared\components\photo-frame\photo-frame.component.ts
+
+Capítulo 02: Testes temporais e de integração com o DOM
+
+1. 
