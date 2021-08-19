@@ -22,5 +22,25 @@ Capítulo 01: Novo componente, nova complexidade
         @see src\app\shared\components\photo-frame\photo-frame.component.ts
 
 Capítulo 02: Testes temporais e de integração com o DOM
+#fakeAsyncZone, #tick, #funcionalTest, #DomIntegrationTest, #accessibilityTest, #attributesTest
 
-1. 
+1. Adicionamos mais um it() ao teste do componente photo-frame:
+        @see src\app\shared\components\photo-frame\photo-frame.component.spec.ts
+   Esse it() tem como objetivo testar se o like() aguarda 500ms antes de registrar outro like;
+2. Adicionamos mais um it() ao teste de componente photo-frame:
+        @see src\app\shared\components\photo-frame\photo-frame.component.spec.ts
+   Esse it() tem como objetivo testar se o próximo like() é considerado após aguardar os 500ms;
+3. Adicionamos mais um it() ao teste de componente photo-frame:
+        @see src\app\shared\components\photo-frame\photo-frame.component.spec.ts
+   Esse it() tem como objetivo testar se o incremento do like é mostrado na página;
+4. Adicionamos mais um it() ao teste de componente photo-frame:
+        @see src\app\shared\components\photo-frame\photo-frame.component.spec.ts
+   Esse it() tem como objetivo testar se incremento do like é lido pelo leitor de tela (screen reader);
+5. Adicionamos mais um it() ao teste de componente photo-frame:
+        @see src\app\shared\components\photo-frame\photo-frame.component.spec.ts
+   Esse it() tem como objetivo testar se o like é inicialmente 0 para o leitor de tela (screen reader);
+6. Adicionamos mais um it() ao teste de componente photo-frame:
+        @see src\app\shared\components\photo-frame\photo-frame.component.spec.ts
+   Esse it() tem como objetivo testar uma imagem com uma descrição é mostrada;
+
+Capítulo 03: Lidando com eventos de UI
