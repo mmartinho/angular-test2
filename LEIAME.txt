@@ -44,3 +44,21 @@ Capítulo 02: Testes temporais e de integração com o DOM
    Esse it() tem como objetivo testar uma imagem com uma descrição é mostrada;
 
 Capítulo 03: Lidando com eventos de UI
+#clickSimulation, #UIEventEmmission, #TestingDirectives
+
+1. Adicionamos mais um it() ao teste de componente like-widget:
+        @see src\app\shared\components\like-widget\like-widget.component.spec.ts
+   Esse it() tem como objetivo testar o click do DOM no widget;
+2. Adicionamos mais um it() ao teste de componente like-widget:
+        @see src\app\shared\components\like-widget\like-widget.component.spec.ts
+   Esse it() tem como objetivo testar o pressionamento da tecla ENTER no widget;
+3. Criamos uma diretiva para carpturar os eventos do "click do mouse" e da tecla "Enter",
+   usando-a no template do "like-widget":
+        @see src\app\shared\directives\action
+        @see src\app\shared\components\like-widget\like-widget.component.html
+4. Criamos uma especificação de testes para a diretiva criada anteriormente:
+        @see src\app\shared\directives\action\action.directive.spec.ts
+
+Capítulo 04: Cuidados com a abstração do Angular
+
+1. 

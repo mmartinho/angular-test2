@@ -1,6 +1,16 @@
+
+<!-- 
+  Substituido do div: 
+  
+    (click)="like()"  
+    (keyup.enter)="like()" 
+
+  ...pela diretiva criada (appAction). Dessa forma, os eventos
+  do keyup e do click dispararão o "like()"
+-->
 <div class="like-widget-container"
-  (click)="like()"
-  (keyup.enter)="like()">
+  (appAction)="like()"
+>
   <fa-icon
     role="button"
     tabindex="0"

@@ -118,7 +118,7 @@ describe(PhotoFrameComponent.name, () => {
    * pt: Verifica se é mostrada uma imagem e uma descrição quando as propriedades são vinculadas
    * en: Check if an image with source and description is displayed when properties are bound
    */
-   it(`(D) Should display image with src and description when bound to properties`, fakeAsync(() => {
+  it(`(D) Should display image with src and description when bound to properties`, fakeAsync(() => {
     const description = 'some desc';
     const src = 'http://somesite.com/img.jpg';
     component.src = src;
@@ -127,5 +127,5 @@ describe(PhotoFrameComponent.name, () => {
     const img: HTMLImageElement = fixture.nativeElement.querySelector('img');
     expect(img.getAttribute('src')).toBe(src);
     expect(img.getAttribute('alt')).toBe(description);
-  }));  
+  }));
 });
