@@ -60,5 +60,30 @@ Capítulo 03: Lidando com eventos de UI
         @see src\app\shared\directives\action\action.directive.spec.ts
 
 Capítulo 04: Cuidados com a abstração do Angular
+#ngOnChangesTest, #simpleChanges
+
+1. Criamos o módulo e componente "photo-board":
+        >ng generate module shared/components/photo-board
+        >ng generate component shared/components/photo-board
+   ...representando a lista composta por componentes "photo-frame". Lembrando que o "photo-frame" é
+   uma composição do componente "like-widget"
+2. Criamos uma interface do "photo-board" para a API de uma photo:
+        >ng generate interface shared/components/photo-board/interfaces/photo
+3. Criamos um serviço do "photo-board" para acessar a API para trazer as photos:
+        >ng generate service shared/components/photo-board/services/photo-board
+        @see src\app\shared\components\photo-board\services\photo-board.service.ts
+   ...declarando um provedor de serviço no módulo do "photo-board". Dessa forma, quem importar o 
+   módulo do "photo-board" já terá acesso ao serviço;
+4. Importamos o módulo do "photo-board" no módulo principal da aplicação:
+        @see src\app\app.module.ts
+   Dessa forma, poderemos usá-lo no "app-component" (componente principal da aplicação). E é o que
+   fizemos em:
+        @see src\app\app.component.html
+        @see src\app\app.component.ts
+5. Finalmente, definimos o teste do "photo-board", cujo arcabouço já havia sido criado junto com o 
+   "ng generate" executado no tópico "1":
+        @see src\app\shared\components\photo-board\photo-board.component.spec.ts
+
+Capítulo 05: Avançando nos testes
 
 1. 
