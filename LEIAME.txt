@@ -85,5 +85,37 @@ Capítulo 04: Cuidados com a abstração do Angular
         @see src\app\shared\components\photo-board\photo-board.component.spec.ts
 
 Capítulo 05: Avançando nos testes
+#SpyOnMocakup, #HttpTestingControllerClass
 
-1. 
+1. Criamos um componente (não compartilhado) tipo escopo de página:
+        >ng generate module components/photo-list
+        >ng generate component components/photo-list
+        @see src\app\components\photo-list
+   Ele vai depender do "photo-board", então, importamos o módulo deste no módulo do "photo-list".
+   E este componente vai ser usado pela aplicação em algum momento (@see "3"), então, precisa está 
+   no "export" do seu módulo;
+2. Passamos toda a lógica que estava no componente principal da aplicação para o "photo-list":
+        @see src\app\components\photo-list\photo-list.component.ts
+        @see src\app\components\photo-list\photo-list.component.html
+   ...removendo tudo o que é desnecessário no módulo do componente principal da aplicação:
+        @see src\app\app.module.ts
+   ...adicionando o componente que "recebe" as páginas componentes da aplicação (router-outlet) 
+   no template do componente principal:     
+        @see src\app\app.component.html
+   E, claro, devemos definir a configuração de rota no módulo da aplicação para esta finalidade:
+        @see src\app\app-routing.module.ts
+3. E, para que a aplicação possa achar o componente "photo-list", seu respectivo módulo deve estar
+   na lista de importação do módulo principal da aplicação:
+        @see src\app\app.module.ts
+4. Criamos uma função para gerar uma lista de fotos em um arquivo fonte separado e exportada:
+        @see src\app\shared\components\photo-board\test\build-photo-list.ts
+   ...importando-a em:
+        @see src\app\shared\components\photo-board\photo-board.component.spec.ts
+   ...usando-a também na nova descrição de teste:
+        @see src\app\components\photo-list\photo-list.component.spec.ts
+   O uso da função "spyOn()" nessa abordagem NÃO testa a REQUISIÇÃO da API. Ao invés disso, ela
+   força o retorno de um objeto criado previamente (@see src\app\shared\components\photo-board\test\
+   build-photo-list.ts), na própria sequencia do teste;
+5. Para realizar realmente a REQUISIÇÃO, sem "mockar" o retorno da API, utilizamos a classe 
+   "HttpTestingController":
+        @see src\app\shared\components\photo-board\services\photo-board.service.spec.ts
